@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Agentic AI Disaster Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Agentic AI Disaster Detection System</h1>
+    <form action="/process" method="post">
+      <label>Disaster Type:</label>
+      <input type="text" name="disaster_type" placeholder="e.g. flood, earthquake" required>
+      <label>Location:</label>
+      <input type="text" name="location" placeholder="e.g. Chennai, Kerala" required>
+      <button type="submit">Analyze Situation</button>
+    </form>
+  </div>
+</body>
+</html>

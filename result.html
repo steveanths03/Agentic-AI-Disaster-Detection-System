@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disaster Report</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Disaster Report for {{ location }}</h1>
+    <h3>Type: {{ disaster_type.title() }}</h3>
+
+    <h2>🏆 Top 5 Articles</h2>
+    <ul>
+      {% for a in articles %}
+      <li>
+        <b>{{ a['Title'] }}</b> <br>
+        Source: {{ a['Source'] }} <br>
+        <a href="{{ a['Link'] }}" target="_blank">Read More</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h2>🧩 Summary</h2>
+    <p>{{ summary }}</p>
+
+    <h2>🚨 Severity Level: <span class="{{ severity }}">{{ severity }}</span></h2>
+
+    <p>🕒 Last Updated: {{ update_time }}</p>
+  </div>
+</body>
+</html>
